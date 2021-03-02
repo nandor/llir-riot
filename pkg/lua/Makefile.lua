@@ -1,7 +1,9 @@
 SRC := $(filter-out loadlib.c lua.c luac.c,$(wildcard *.c))
 
 ifneq (llvm, $(TOOLCHAIN))
-  CFLAGS += -fstack-usage -fconserve-stack
+  ifneq (llir, $(TOOLCHAIN))
+    CFLAGS += -fstack-usage -fconserve-stack
+  endif
 endif
 
 CFLAGS += -DLUA_MAXCAPTURES=16 -DL_MAXLENNUM=50

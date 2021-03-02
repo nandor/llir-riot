@@ -9,4 +9,4 @@ ifneq (,$(filter periph_can,$(USEMODULE)))
   LINKFLAGS += -lsocketcan
 endif
 
-TOOLCHAINS_SUPPORTED = gnu llvm afl
+TOOLCHAINS_SUPPORTED = gnu llvm llir afl
